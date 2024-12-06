@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Currency Converter</h1>
+        <p>Enter the amount, select currencies, and convert</p>
+        <div class="converter">
+            <input type="number" id="amount" placeholder="0.00">
+            <select id="fromCurrency">
+                <option value="usd">US Dollar (USD)</option>
+                <option value="cfa">CFA Franc (CFA)</option>
+                <option value="ngn">Nigerian Naira (NGN)</option>
+                <option value="cny">Chinese Yuan (CNY)</option>
+            </select>
+
+            <select id="toCurrency">
+                <option value="usd">US Dollar (USD)</option>
+                <option value="cfa">CFA Franc (CFA)</option>
+                <option value="ngn">Nigerian Naira (NGN)</option>
+                <option value="cny">Chinese Yuan (CNY)</option>
+            </select>
+
+            <button id="convertButton" onclick="convertCurrency()" disabled>Convert</button>
+        </div>
+        <div id="result" class="result-box"></div>
+    </div>
+</body>
+
+</html>
