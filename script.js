@@ -28,10 +28,10 @@ var convertCurrency = function() {
     } 
     
   var exchangeRates = { 
-    usd: { cfa: 550, ngn: 380, cny: 6.5 }, 
-    cfa: { usd: 0.0018, ngn: 2.70, cny: 0.012 }, 
-    ngn: { usd: 0.0026, cfa: 1.45, cny: 0.017 }, 
-    cny: { usd: 0.15, cfa: 82.5, ngn: 59 } 
+    usd: { cfa: 620.41, ngn: 780, cny: 6.93 }, 
+    cfa: { usd: 0.0016, ngn: 2.41, cny: 0.1375 }, 
+    ngn: { usd: 0.00064, cfa: 0.40, cny: 0.06 }, 
+    cny: { usd: 0.14, cfa: 85.31, ngn: 164.45 } 
 }; 
 
 if (from === to) { 
