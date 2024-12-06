@@ -7,7 +7,9 @@ var resultDiv = document.getElementById("result");
 var enableButton = function() { 
     if (amountInput.value !== '' && fromCurrency.value && toCurrency.value) { 
         convertButton.disabled = false; 
-    } else { convertButton.disabled = true; } 
+    } else { 
+        convertButton.disabled = true; 
+    } 
 
 }; 
 
@@ -19,7 +21,11 @@ var convertCurrency = function() {
     var amount = parseFloat(amountInput.value); 
     var from = fromCurrency.value; 
     var to = toCurrency.value; 
-    var result; 
+    var result;
+    
+    console.log("Amount: " + amount);
+    console.log("From Currency: " + from);
+    console.log("To Currency: " + to);
     
     if (isNaN(amount)) { 
         resultDiv.textContent = "Please enter a valid amount!"; 
@@ -28,10 +34,10 @@ var convertCurrency = function() {
     } 
     
   var exchangeRates = { 
-    usd: { cfa: 620.41, ngn: 780, cny: 6.93 }, 
-    cfa: { usd: 0.0016, ngn: 2.41, cny: 0.1375 }, 
-    ngn: { usd: 0.00064, cfa: 0.40, cny: 0.06 }, 
-    cny: { usd: 0.14, cfa: 85.31, ngn: 164.45 } 
+    usd: { cfa: 619.73, ngn: 1597.28, cny: 7.27 }, 
+    cfa: { usd: 0.0016, ngn: 2.58, cny: 0.01168 }, 
+    ngn: { usd: 0.00063, cfa: 0.39, cny: 0.0045 }, 
+    cny: { usd: 0.14, cfa: 85.32, ngn: 220.84 } 
 }; 
 
 if (from === to) { 
@@ -39,6 +45,8 @@ if (from === to) {
 } else { 
     result = amount * exchangeRates[from][to]; 
 } 
+
+console.log("Result: " + result);
 
 resultDiv.textContent = amount.toFixed(2) + " " + from.toUpperCase() + " is " + result.toFixed(2) + " " + to.toUpperCase();
 resultDiv.style.display = "block";
